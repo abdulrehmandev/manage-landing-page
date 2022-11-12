@@ -1,5 +1,6 @@
-
-/* Variables */
+/*
+  Variables
+*/
 
 :root {
   --font-family: 'Be Vietnam Pro', sans-serif;
@@ -28,7 +29,9 @@
   --padding-block: 4rem;
 }
 
-/* Reset */
+/*
+  Reset
+*/
 
 *,
 *::before,
@@ -64,7 +67,9 @@ button {
   font: inherit;
 }
 
-/* Utilities */
+/*
+  Utilities
+*/
 
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-margin, 1.5rem);
@@ -77,6 +82,12 @@ button {
 
 .padding-block {
   padding-block: var(--padding-block);
+}
+
+@media (max-width: 564px) {
+  .padding-block {
+    --padding-block: 3rem;
+  }
 }
 
 .heading-primary{
@@ -132,14 +143,14 @@ button {
   color: var(--clr-text-white);
 }
 
-.btn-primary:hover,
-.btn-secondary:hover {
-  opacity: 0.7;
-}
-
 .btn-secondary {
   background: var(--clr-text-white);
   color: var(--clr-pri-accent);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  opacity: 0.8;
 }
 
 .list {
@@ -147,7 +158,11 @@ button {
   padding: 0;
 }
 
-/* Componenets */
+/*
+  Componenets
+*/
+
+/* header */
 
 .primary-header-wrapper {
   display: flex;
@@ -221,12 +236,26 @@ button {
   }
 }
 
-/* Hero */
+/* hero */
 
 .hero-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero-wrapper::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10rem;
+  right: 0;
+  z-index: -1;
+  background-image: url(./images/bg-tablet-pattern.svg);
+  background-repeat: no-repeat;
+  zoom: 100%;
+  width: 50%;
+  height: 150%;
 }
 
 .hero-wrapper .flow {
@@ -265,6 +294,9 @@ button {
 }
 
 @media (max-width: 564px) {
+  .hero-wrapper::before {
+    width: 90%;
+  }
   .hero-body .text {
     width: 80%;
   }
@@ -274,12 +306,16 @@ button {
   }
 }
 
-/* different */
+/* sales-points */
+
+.sales-point-section {
+}
 
 .sales-point-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
+  overflow-x: hidden;
 }
 
 .sales-point-wrapper .flow {
@@ -289,6 +325,33 @@ button {
 
 .sales-point-main-body {
   width: 70%;
+}
+
+.sales-point-wrapper::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 130%;
+  left: -20rem;
+  background-image: url(./images/bg-tablet-pattern.svg);
+  background-repeat: no-repeat;
+  zoom: 80%;
+  width: 80%;
+  height: 150%;
+}
+
+@media (max-width: 992px) {
+  .sales-point-wrapper::before {
+    top: 160%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 796px) {
+  .sales-point-wrapper::before {
+    display: none;
+  }
 }
 
 .numbered-list {
@@ -342,7 +405,6 @@ button {
   }
 }
 
-
 @media (max-width: 564px) {
 
   .list-item {
@@ -370,11 +432,11 @@ button {
   }
 }
 
+
 /* slider */
 
 .reviews-section .heading-secondary {
   text-align: center;
-  margin-bottom: 1rem;
 }
 
 .swiper {
@@ -430,7 +492,6 @@ button {
   }
 }
 
-
 /* cta */
 
 .cta {
@@ -439,14 +500,46 @@ button {
   position: relative;
 }
 
-/* .cta::before {
+.cta::before {
   content: '';
   position: absolute;
-  top: 0;
-  width: 400px;
-  height: 400px;
-  background-image: url(./images/bg-simplify-section-desktop.svg);
-} */
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  zoom: 50%;
+  opacity: 0.1;
+  background-image: url(./images/bg-tablet-pattern.svg);
+  background-repeat: no-repeat;
+  
+}
+
+.cta::after {
+  content: '';
+  position: absolute;
+  top: -2rem;
+  right: 0%;
+  zoom: 60%;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-image: url(./images/bg-tablet-pattern.svg);
+  background-repeat: no-repeat;
+  rotate: 180deg;
+}
+
+@media (max-width: 992px) {
+  .cta::after {
+    display: none;
+  }
+}
+
+@media (max-width: 564px) {
+  .cta::before {
+    left: -50%;
+    width: 150%;
+    height: 80%;
+  }
+}
 
 .cta-wrapper {
   display: flex;
@@ -457,6 +550,10 @@ button {
 .cta-wrapper .heading-secondary {
   color: var(--clr-text-white);
   width: 40%;
+}
+
+.cta-wrapper .btn-secondary {
+  z-index: 1;
 }
 
 @media (max-width: 992px) {
@@ -470,7 +567,7 @@ button {
   .cta {
     margin-top: 1rem;
   }
-  
+
   .cta-wrapper {
     flex-direction: column;
   }
@@ -485,7 +582,7 @@ button {
 /* Footer */
 
 .primary-footer {
-  background-color: var(--clr-bg-dark); 
+  background-color: var(--clr-bg-dark);
 }
 
 .primary-footer-wrapper {
