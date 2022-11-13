@@ -117,7 +117,7 @@ button {
 }
 
 .link {
-  font-size: var(--fs-small);
+  font-size: var(--fs-regular);
   text-decoration: none;
   color: var(--clr-pri-text);
   transition: opacity 200ms ease;

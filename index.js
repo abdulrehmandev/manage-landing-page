@@ -1,9 +1,3 @@
-import Swiper, {Navigation, Pagination} from 'swiper'
-
-import 'swiper/css'
-import 'swiper/css/Navigation'
-import 'swiper/css/Pagination'
-
 
 const headerToggle = document.querySelector('.header-toggle')
 const primaryNav = document.getElementById('primary-navigation')
