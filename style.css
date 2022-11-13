@@ -308,9 +308,6 @@ button {
 
 /* sales-points */
 
-.sales-point-section {
-}
-
 .sales-point-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
